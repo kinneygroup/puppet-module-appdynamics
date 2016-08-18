@@ -34,7 +34,8 @@ class appdynamics::controller (
     File_line['ulimit config 1'] ->
     File_line['ulimit config 2'] ->
     File['deploy response file'] ->
-    Exec['install app dynamics controller']
+    Exec['validate dns resolution'] ->
+    Exec['install app dynamics controller'] ->
     Package['gcc'] ->
     File['Deploy HA Toolkit'] ->
     Exec['Install init'] ->
@@ -93,10 +94,15 @@ class appdynamics::controller (
       source => "puppet:///modules/appdynamics/${controller_install_package}",
     }
 
+    exec { 'validate dns resolution':
+      command   => "ping ${server_hostname} -c 2 && exit 0 || echo \"unable to resolve ${server_hostname}\" && exit 1",
+      logoutput => on_failure,
+      provider  => shell,
+    }
+
     exec { 'install app dynamics controller':
       command   => "sh /opt/${controller_install_package} -q -varfile /opt/response.varfile",
       creates   => '/home/appduser/AppDynamics/Controller/bin/controller.sh',
-      require   => File['deploy response file','deploy controller package'],
       logoutput => true,
       provider  => shell,
     }

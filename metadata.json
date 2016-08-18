@@ -8,8 +8,18 @@
   "project_page": "https://forge.puppet.com/kinneygroup/appdynamics",
   "issues_url": "https://github.com/kinneygroup/puppet-module-appdynamics/issues",
   "tags": ["appdynamics", "monitoring"],
+  "requirements": [
+  {
+    "name": "pe",
+    "version_requirement": ">= 3.3.0 < 2016.4.0"
+  },
+  {
+    "name": "puppet",
+    "version_requirement": ">= 3.0.0 < 5.0.0"
+  }
+],
   "dependencies": [
-    {"name":"puppetlabs-stdlib","version_requirement":">= 3.2.0"},
+    {"name":"puppetlabs-stdlib","version_requirement":">= 3.2.0 <5.0.0"},
   ],
   "operatingsystem_support": [
   {
