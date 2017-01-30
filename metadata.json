@@ -1,6 +1,6 @@
 {
   "name": "kinneygroup-appdynamics",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "kinneygroup",
   "summary": "Install and configure appdynamics (https://www.appdynamics.com/)",
   "license": "Apache-2.0",
