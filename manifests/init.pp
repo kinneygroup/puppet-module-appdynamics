@@ -166,7 +166,7 @@ class appdynamics (
   }
 
   exec { 'install_ha_toolkit':
-    command => "tar -xzvf ${ha_toolkit_path} -C /tmp && mv /tmp/HA-toolkit ${install_dir}/AppDynamicsHA",
+    command => "tar -xzvf ${ha_toolkit_path} -C /tmp && mv /tmp/HA-toolkit-* ${install_dir}/AppDynamicsHA",
     creates => "${install_dir}/AppDynamicsHA",
     path    => $exec_path,
     require => Exec['install_controller'],

@@ -104,7 +104,7 @@ describe 'appdynamics' do
 
     it do
       should contain_exec('install_ha_toolkit').with({
-        :command => 'tar -xzvf /tmp/HA-toolkit.tar.gz -C /tmp && mv /tmp/HA-toolkit /home/appduser/AppDynamics/Controller/AppDynamicsHA',
+        :command => 'tar -xzvf /tmp/HA-toolkit.tar.gz -C /tmp && mv /tmp/HA-toolkit-* /home/appduser/AppDynamics/Controller/AppDynamicsHA',
         :creates => '/home/appduser/AppDynamics/Controller/AppDynamicsHA',
         :path    => '/bin:/usr/bin:/sbin:/usr/sbin',
         :require => 'Exec[install_controller]',
