@@ -1,2 +1,10 @@
-### 0.1.0 2016-08-17 Martez Reed <martez.reed@kinneygroup.com>
- * Initial code commit
+## [1.0.0](https://github.com/kinneygroup/puppet-module-appdynamics/releases/tag/v1.0.0) (2017-02-06)
+### Summary
+
+Initial stable release
+
+#### Features
+- Controller installation.
+
+#### Bugfixes
+- N/A
